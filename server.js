@@ -6,7 +6,13 @@ const app=express();
 //connect database
 connectDB();
 
-app.get('/',(req,res)=>res.send('The API IS NOW RUNNING'))
+app.get('/',(req,res)=>res.send('The API IS NOW RUNNING'));
+
+//Define Routes
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/posts', require('./routes/api/posts'));
+app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/profile', require('./routes/api/profile'));
 
 const PORT= process.env.PORT || 5000;
 
