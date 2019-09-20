@@ -37,7 +37,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ errors: [{ msg: "user already exits" }] });
+          .json({ errors: [{ msg: "user already exits" , status: false}] });
       }
 
       const avatar = gravatar.url(email, {
@@ -71,12 +71,12 @@ router.post(
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw error;
-          res.json({ token });
+          res.json({ 'msg':'You have successfully signed up.Now pls Login', status: true });
         }
       );
     } catch (error) {
       console.error(err.message);
-      res.status(500).send("Server error");
+      res.status(500).json({error: err.message, status: false});
     }
   }
 );
