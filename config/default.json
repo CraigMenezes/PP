@@ -1,4 +1,6 @@
 {
 "mongoURI":"mongodb+srv://cm123:cm123@ths-craig-d8gzo.gcp.mongodb.net/test?retryWrites=true&w=majority",
-"jwtSecret":"mysecrettoken"
+"jwtSecret":"mysecrettoken",
+"githubClientId":"785a162b8cffcb1d466a",
+"githubSecret":"086d1f9bc419a842c8da011ba81d2ca49faa7cb4"
 }
